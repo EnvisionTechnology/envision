@@ -1,0 +1,1 @@
+const nightday=document.getElementById("nightday"),target=document.getElementById("target"),services=document.querySelector(".servicesContainer");nightday.addEventListener("click",()=>{target.classList.toggle("sun"),target.classList.toggle("moon"),services.classList.toggle("night")});

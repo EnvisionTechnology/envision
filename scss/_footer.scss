@@ -1,0 +1,230 @@
+footer {
+
+  .topFooterContainer {
+    background: $black;
+    width: 100%;
+    position: relative;
+
+    .topFooter {
+      padding: 80px 15vw;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      align-items: center;
+
+      @media (max-width: $xxlargeBreak) {
+        padding: 80px 10vw;
+      }
+
+      @media (max-width: $xlargeBreak) {
+        padding: 80px 6vw;
+        grid-template-columns: 2fr 1fr;
+      }
+
+      @media (max-width: $smallBreak) {
+        padding: 60px 6vw;
+        grid-template-columns: 100%;
+        grid-row-gap: 40px;
+      }
+
+      .footerTitle {
+        padding: 0 50px 0 25px;
+        border-left: 3px solid $aqua;
+
+        @media (max-width: $smallBreak) {
+          padding: 0 0 0 25px;
+        }
+
+        .h5 {
+          color: $aqua;
+          display: block;
+          margin: 0 0 12px;
+        }
+
+        h2 {
+          color: white;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .bottomFooterGrid {
+    padding: 50px 0 25px;
+    margin: 0 15vw;
+    border-left: 1px solid $black7;
+    border-right: 1px solid $black7;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+    align-items: start;
+
+    @media (max-width: $xxlargeBreak) {
+      width: 80vw;
+      margin: 0 10vw;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      width: 88vw;
+      margin: 0 6vw;
+    }
+
+    @media (max-width: $mediumBreak) {
+      padding: 40px 0;
+    }
+
+    @media (max-width: $smallBreak) {
+      width: 94vw;
+      margin: 0 3vw;
+      grid-template-columns: 1fr;
+      grid-gap: 40px;
+    }
+
+    .fLogo {
+      grid-column: 1 / span 1;
+      padding-left: 25px;
+
+      @media (max-width: $smallBreak) {
+        justify-self: center;
+        padding-left: 0;
+      }
+
+      img {
+        max-width: 150px;
+      }
+    }
+
+    .fContent {
+      grid-column: 2 / span 2;
+      text-align: center;
+      color: $gray;
+      line-height: 1.6;
+
+      @media (max-width: $smallBreak) {
+        grid-column: 1 / span 1;
+      }
+
+      a.fContact {
+        color: $gray;
+
+        &::before {
+          content: '|';
+          margin-left: 6px;
+          padding-right: 10px;
+        }
+
+        &:first-child::before {
+          display: none;
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      @media (max-width: $xlargeBreak) {
+        a.break {
+          display: block;
+          width: 100%;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      .copyright {
+        display: block;
+        margin: 25px 0 0;
+        font-size: 14px;
+      }
+
+      .loginLinks {
+
+      }
+    }
+
+    .fSocial {
+      grid-column: 4 / span 1;
+      justify-self: end;
+      padding-right: 25px;
+
+      @media (max-width: $smallBreak) {
+        grid-column: 1 / span 1;
+        justify-self: center;
+      }
+
+      a {
+        margin-left: 15px;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+
+  .loginLinks {
+    padding: 12px 6vw;
+    background: $silver;
+    text-align: center;
+    border-top: 1px solid $black7;
+
+    a {
+      color: $gray;
+      font-size: 14px;
+      margin: 0 8px;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+
+
+
+.lightFooterGrid {
+  position: absolute;
+  height: 100%;
+  width: 70vw;
+  border-left: 1px solid $white8;
+  border-right: 1px solid $white8;
+  z-index: 0;
+  margin: 0 0 0 50%;
+  transform: translate(-50%);
+  pointer-events: none;
+
+  @media (max-width: $xxlargeBreak) {
+    width: 80vw;
+  }
+
+  @media (max-width: $xlargeBreak) {
+    width: 88vw;
+  }
+
+  @media (max-width: $smallBreak) {
+    width: 94vw;
+  }
+
+  .grid25, .grid50, .grid75 {
+    position: absolute;
+    left: 25%;
+    background: $white8;
+    width: 1px;
+    height: 100%;
+    z-index: 1;
+
+    @media (max-width: $mediumBreak) {
+      display: none;
+    }
+  }
+
+  .grid50 {
+    left: 50%
+  }
+
+  .grid75 {
+    left: 75%
+  }
+}

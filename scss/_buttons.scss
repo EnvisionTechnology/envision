@@ -1,0 +1,65 @@
+button, a.button {
+  border: none;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 16px;
+
+  @media (max-width: $xsmallBreak) {
+    font-size: 15px;
+  }
+
+  &, &:link, &:visited {
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $aqua;
+    color: $black;
+    height: 42px;
+    position: relative;
+    transition: .2s all ease-in-out;
+    font-weight: 500;
+
+    &::after {
+      background: none;
+      border: 1px solid $aqua50;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: -4px;
+      bottom: -4px;
+      pointer-events: none;
+      transition: .2s all ease-in-out;
+    }
+  }
+
+  &:hover, &:active, &:focus {
+    background: $aquaHover;
+
+    &::after {
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+    }
+  }
+
+  &.blue {
+    background: $blue;
+    color: white;
+
+    &::after {
+      border: 1px solid $blue75;
+    }
+
+    &:hover, &:active, &:focus {
+      background: $hover;
+
+      &::after {
+        border: 1px solid $hover;
+      }
+    }
+  }
+}

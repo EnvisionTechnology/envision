@@ -1,0 +1,256 @@
+// dropdown menu styles
+section.dropdownContent {
+  position: absolute;
+  left: 0;
+  top: $navHeight;
+  background: white;
+  box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+  z-index: 0;
+
+  width: 70%;
+  padding: 0 15%;
+
+  @media (max-width: $xxlargeBreak) {
+    width: 80%;
+    padding: 0 10%;
+  }
+
+  @media (max-width: $xlargeBreak) {
+    width: 88%;
+    padding: 0 6%;
+  }
+
+  @media (max-width: $mediumBreak) {
+    top: 120px;
+  }
+
+  .drop {
+    display: flex;
+
+    nav {
+      width: 75%;
+      display: grid;
+      padding: 40px 0;
+
+      &.menuServices {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        @media (max-width: $mediumBreak) {
+          width: 100%;
+        }
+      }
+
+      &.menuCompany {
+        width: 50%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        @media (max-width: $mediumBreak) {
+          width: 100%;
+        }
+      }
+
+      &.menuLaunchpad {
+        width: 50%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        @media (max-width: $mediumBreak) {
+          width: 100%;
+        }
+      }
+
+      .navCol {
+        padding: 0 40px 15px 0;
+
+        h5 {
+          color: $blue;
+          margin: 0 0 20px;
+        }
+
+        a {
+          color: $black;
+          display: block;
+          margin: 0 0 20px;
+
+          span.trending {
+            background: $aqua50;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 2px 4px;
+            border-radius: 3px;
+            margin: 0 0 0 6px;
+          }
+
+          span.desc {
+            display: block;
+            color: $gray;
+            font-size: 13px;
+            line-height: 19px;
+            margin: 7px 0 0;
+            padding: 0 0 20px;
+            border-bottom: 1px solid $black7;
+            transition: .25s ease-in-out;
+          }
+
+          &:hover {
+            color: $blue;
+
+            span.trending {
+              color: $black;
+            }
+
+            span.desc {
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+
+    .navSpotlight {
+      width: calc(50% - 50px);
+      background: $silver;
+      padding: 40px 25px;
+
+      @media (max-width: $mediumBreak) {
+        display: none;
+      }
+
+      .h5 {
+        color: $blue;
+        display: block;
+        margin: 0 0 15px;
+      }
+
+      a.spotlight {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+        border: 1px solid $black7;
+        padding: 25px;
+
+        .spotlightContent {
+          color: black;
+
+          @media (max-width: $mediumBreak) {
+            width: 100%;
+          }
+
+          span.dateAuthor {
+            font-size: 12px;
+          }
+        }
+
+        figure {
+          width: 100%;
+          height: 120px;
+          overflow: hidden;
+          margin: 0;
+
+          @media (max-width: $mediumBreak) {
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.25s ease;
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+
+          figure {
+            img {
+              transform: scale(1.04);
+            }
+          }
+        }
+      }
+    }
+
+    .navRecognition {
+      width: calc(50% - 50px);
+      background: $silver;
+      padding: 40px 25px;
+
+      @media (max-width: $mediumBreak) {
+        display: none;
+      }
+
+      h5 {
+        margin: 0 0 25px;
+      }
+
+      .navLogos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 100px;
+        place-items: center;
+        border: 1px solid $black7;
+
+        div {
+          width: 100%;
+          height: 100%;
+          display: grid;
+          place-items: center;
+
+          &:nth-child(odd) {
+            border-right: 1px solid $black7;
+          }
+
+          &:nth-child(1), &:nth-child(2) {
+            border-bottom: 1px solid $black7;
+          }
+
+          img {
+            max-width: 50%;
+            filter: grayscale(100%);
+
+            &.maxHeight {
+              height: 85%;
+            }
+          }
+        }
+      }
+    }
+
+    .navTestimonial {
+      width: calc(25% - 50px);
+      background: $silver;
+      padding: 40px 25px;
+
+      @media (max-width: $mediumBreak) {
+        display: none;
+      }
+
+      img {
+        max-width: 66px;
+        border-radius: 3px;
+        margin: 0 0 18px;
+      }
+
+      p {
+        color: $black;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 14px;
+        display: block;
+        color: $gray;
+
+        &:first-child {
+          font-weight: 500;
+          margin: 0 0 6px;
+        }
+      }
+    }
+  }
+}
+
+
+// TEMPORARY... DELETE
+section.test {
+  display: inherit !important;
+}

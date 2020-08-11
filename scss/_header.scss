@@ -1,0 +1,262 @@
+.progress {
+  width: 100vw;
+  background: linear-gradient(90deg,$blue,$aqua);
+  display: block;
+  position: fixed;
+	z-index: 50;
+  top: 0;
+  width: 0vw;
+  height: 3px;
+
+  animation: progress 1s linear;
+  /* Pause the animation */
+  animation-play-state: paused;
+  /* Bind the animation to scroll */
+  animation-delay: calc(var(--scroll) * -1s);
+  /* These last 2 properites clean up overshoot weirdness */
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes progress {
+  0% {
+    width: 0vw;
+    background: linear-gradient(90deg,$blue,$aqua);
+  }
+
+  100% {
+    background: linear-gradient(90deg,$blue,$aqua);
+    width: 100vw;
+  }
+}
+
+header {
+  width: 70%;
+  padding: 0 15%;
+  height: $navHeight;
+  z-index: 5;
+  top: 0;
+  background: none;
+  position: fixed;
+
+  display: grid;
+  grid-template-columns: 170px 1fr 170px;
+  grid-template-areas: "logo nav btn";
+  grid-column-gap: 40px;
+  align-items: center;
+  transition: all .2s ease-in-out;
+
+  @media (max-width: $xxlargeBreak) {
+    width: 80%;
+    padding: 0 10%;
+  }
+
+  @media (max-width: $xlargeBreak) {
+    width: 88%;
+    padding: 0 6%;
+  }
+
+  @media (max-width: $mediumBreak) {
+    height: 120px;
+    position: absolute;
+    background: white;
+    box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 50px;
+    grid-column-gap: 30px;
+    grid-template-areas: "logo btn"
+                          "nav nav";
+  }
+
+  @media (max-width: $xlargeBreak) {
+    width: 90%;
+    padding: 0 5%;
+  }
+
+  a.logo {
+    grid-area: logo;
+
+    img {
+      transition: all .25s ease-in-out;
+      max-width: 170px;
+
+      &.color {
+        display: none;
+      }
+    }
+
+    @media (max-width: $mediumBreak) {
+      img {
+        width: 100%;
+        &.color {
+          display: inherit;
+        }
+        &.white {
+          display: none;
+        }
+      }
+    }
+  }
+
+  nav.main {
+    grid-area: nav;
+    height: calc(100% - 4px);
+    display: flex;
+
+    @media (max-width: $mediumBreak) {
+      justify-content: space-between;
+      border-top: 1px solid $black7;
+    }
+
+    .dropdown {
+
+      a.menuTitle {
+        padding: 0 25px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 4px solid transparent;
+        transition: .4s all cubic-bezier(.17,.67,.23,1);
+
+        @media (max-width: $mediumBreak) {
+          padding: 0 15px 0 0;
+          font-size: 15px;
+        }
+
+        @media (max-width: $smallBreak) {
+          margin: 0 15px 0 0;
+          font-size: 14px;
+          height: 100%;
+        }
+
+        &, &:link, &:visited {
+      		color: white;
+
+          @media (max-width: $mediumBreak) {
+            color: $black;
+          }
+      	}
+        &:hover, &:active, &:focus {
+          color: $aqua;
+
+          @media (max-width: $mediumBreak) {
+            color: $blue;
+          }
+        }
+      }
+
+      .dropdownContent {
+        display: none;
+      }
+
+      &:hover {
+
+        a.menuTitle {
+          border-bottom: 4px solid $aqua;
+
+          @media (max-width: $mediumBreak) {
+            border-bottom: 4px solid $blue;
+          }
+        }
+
+        .dropdownContent {
+          display: inherit;
+          animation: fadedown .4s cubic-bezier(.17,.67,.23,1);
+
+          @media (max-width: $mediumBreak) {
+            animation: fadedownMobile .4s cubic-bezier(.17,.67,.23,1);
+          }
+        }
+      }
+    }
+  }
+
+  a.navButton {
+    grid-area: btn;
+
+    @media (max-width: $mediumBreak) {
+      padding: 0 10px !important;
+      height: 36px !important;
+    }
+
+    @media (max-width: $smallBreak) {
+      padding: 0 8px !important;
+      height: 32px !important;
+      font-size: 14px;
+      margin-left: 20px;
+    }
+  }
+
+  // shrunken header styles upon scroll
+  &.small {
+    @media (min-width: $mediumBreak) {
+      background: white;
+      box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+      animation: menu .7s cubic-bezier(.17,.67,.23,1);
+      z-index: 6;
+
+      a.logo {
+        img {
+          &.color {
+            display: inherit;
+          }
+          &.white {
+            display: none;
+          }
+        }
+      }
+
+      nav.main {
+        .dropdown {
+          a.menuTitle {
+            &, &:link, &:visited {
+          		color: $black;
+          	}
+            &:hover, &:active, &:focus {
+              color: $blue;
+              border-bottom: 4px solid $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes menu {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadedown {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    top: 62px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    top: $navHeight;
+  }
+}
+
+@keyframes fadedownMobile {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    top: 100px;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    top: 120px;
+  }
+}

@@ -1,0 +1,216 @@
+
+// Colors
+$black: #04121D;
+$black85: rgba($black, .85);
+$black65: rgba($black, .65);
+$black15: rgba($black, .15);
+$black7: rgba($black, .07);
+
+$gray: rgba($black, .8); //body text color
+
+$blue: #0052F1; // default link color
+$blue75: rgba($blue, .75);
+$blue50: rgba($blue, .5);
+$blue25: rgba($blue, .25);
+$blue15: rgba($blue, .15);
+
+$aqua: #68D5F8;
+$aqua50: rgba($aqua, .5);
+$aqua38: rgba($aqua, .38);
+$aqua25: rgba($aqua, .25);
+$aqua15: rgba($aqua, .15);
+$aquaHover: darken($aqua, 7%);
+
+$white75: rgba(white, .75);
+$white50: rgba(white, .5);
+$white15: rgba(white, .15);
+$white8: rgba(white, .08);
+
+$silver: #F6F9FC;
+
+// Links
+$link: $blue;
+$hover: darken($blue, 7%);
+
+//Line Breaks
+$xxxlargeBreak: 1900px;
+$xxlargeBreak: 1600px;
+$xlargeBreak: 1280px;
+$largeBreak: 1140px;
+$mediumBreak: 1023px;
+$smallBreak: 767px;
+$xsmallBreak: 500px;
+
+// Typography
+$font: 'Work Sans', 'Trebuchet MS', Helvetica, sans-serif;
+$textSize: 16px;
+$lineHeight: 1.6;
+$mobileTextSize: 15px;
+$mobileLineHeight: 1.5;
+
+// Misc.
+$navHeight: 75px;
+$textShadow: 0 1px 3px rgba(black, .4), 0 2px 12px rgba(black, .2);
+
+// Reset
+img, iframe { border: 0 }
+
+// Global Styles
+body {
+  margin: 0;
+	font-family: $font;
+	color: $black;
+	scroll-behavior: smooth;
+	font-style: normal;
+	font-weight: 400;
+
+	&.body-fixed {
+  	overflow: hidden;
+  }
+}
+
+h1, .h1 {
+	font-weight: 600;
+	font-size: 60px;
+  line-height: 1.2;
+	margin: 0 0 12px;
+
+	@media (max-width: $mediumBreak) {
+		font-size: 50px;
+	}
+}
+
+h2, .h2 {
+	font-weight: 600;
+	font-size: 36px;
+  margin: 0 0 10px;
+	margin: 0 0 .5em;
+
+	@media (max-width: $smallBreak) {
+		font-size: 28px;
+	}
+}
+
+h3, .h3 {
+	font-weight: 500;
+	font-size: 28px;
+  line-height: 1.4;
+	margin: 0 0 10px;
+
+	@media (max-width: $smallBreak) {
+		font-size: 21px;
+	}
+}
+
+h4, .h4 {
+	font-weight: 500;
+	font-size: 20px;
+  line-height: 1.3;
+  margin: 0 0 8px;
+	margin: 0 0 .5em;
+
+	@media (max-width: $smallBreak) {
+		font-size: 18px;
+	}
+}
+
+h5, .h5 {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.2;
+	margin: 0 0 8px;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+}
+
+h6 {}
+
+p {
+  font-size: $textSize;
+	line-height: $lineHeight;
+	color: $gray;
+  margin: 0 0 22px;
+
+  &.large {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+	@media (max-width: $smallBreak) {
+		font-size: $mobileTextSize;
+		line-height: $mobileLineHeight;
+
+    &.large {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+	}
+}
+
+ul, ol {
+	font-size: $textSize;
+	line-height: $lineHeight;
+	color: $gray;
+	margin: 0 0 22px;
+	padding: 0 0 0 20px;
+
+	@media (max-width: $smallBreak) {
+		font-size: $mobileTextSize;
+		line-height: $mobileLineHeight;
+	}
+
+  li {
+	  margin: 0 0 10px;
+
+		ul {
+			margin: 0;
+			font-size: 1em;
+		}
+  }
+}
+
+a {
+	&, &:link, &:visited {
+		color: $link;
+		text-decoration: none;
+		transition: all .2s ease-in-out;
+	}
+  &:hover, &:active, &:focus {
+    color: $hover;
+  }
+}
+
+button {
+	transition: all .2s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+svg path {
+	transition: all .2s ease-in-out;
+}
+
+//utilities
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
