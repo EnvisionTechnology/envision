@@ -1,0 +1,158 @@
+.contentContainer {
+  background: white;
+  width: 100%;
+  position: relative;
+
+  .contentGrid {
+    padding: 100px 0;
+    margin: 0 15vw;
+    border-left: 1px solid $black7;
+    border-right: 1px solid $black7;
+
+    @media (max-width: $xxlargeBreak) {
+      width: 80vw;
+      margin: 0 10vw;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      width: 88vw;
+      margin: 0 6vw;
+    }
+
+    @media (max-width: $mediumBreak) {
+      padding: 80px 0 40px;
+    }
+
+    @media (max-width: $smallBreak) {
+      width: 94vw;
+      margin: 0 3vw;
+    }
+
+    .topBlock {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 50px;
+
+      @media (max-width: $mediumBreak) {
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+      }
+
+      .topBlockContent {
+        padding: 0 0 0 25px;
+
+        @media (max-width: $smallBreak) {
+          padding: 0 25px;
+        }
+
+        p {
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 1.6;
+
+          @media (max-width: $smallBreak) {
+            font-size: 18px;
+            line-height: 1.5;
+        	}
+        }
+      }
+
+      .topBlockR {
+        p.caption {
+          padding: 5px 25px 0 0;
+
+          @media (max-width: $mediumBreak) {
+            padding: 5px 25px 0 25px;
+          }
+        }
+      }
+    }
+
+    .highlights {
+      margin: 80px 0 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 25px;
+      grid-gap: 50px;
+
+      @media (max-width: $mediumBreak) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: $xsmallBreak) {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight {
+        color: $black;
+
+        span.blueDivider {
+          display: block;
+          width: 50px;
+          height: 5px;
+          background: $blue;
+          margin: 0 0 15px;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .simpleBlock {
+      margin: 80px 0 0;
+      border-top: 1px solid $black15;
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 80px 0 0 0;
+
+      a.button {
+        margin: 25px 0 0;
+      }
+
+      @media (max-width: $xsmallBreak) {
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+      }
+
+      .simpleContentL {
+        width: 100%;
+      }
+
+      .simpleContentR {
+        padding-right: 25px;
+      }
+
+      @media (max-width: $xsmallBreak) {
+        .simpleContentR {
+          padding: 0 25px;
+        }
+      }
+    }
+
+  }
+}
+
+
+
+.blockTitle {
+  padding: 0 0 0 22px;
+  margin: 0 0 0;
+  border-left: 3px solid $blue;
+
+  @media (max-width: $mediumBreak) {
+    max-width: 88%;
+  }
+
+  .h5 {
+    color: $blue;
+    display: block;
+    margin: 0 0 12px;
+  }
+
+  p.large {
+    margin-top: -10px;
+  }
+}

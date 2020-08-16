@@ -1,0 +1,335 @@
+section.banner {
+  position: relative;
+  overflow: hidden;
+  background: black;
+  width: 100%;
+  height: 75vh;
+
+  @media (max-width: $mediumBreak) {
+    height: 500px;
+    margin: 120px 0 0;
+  }
+
+  @media (max-width: $smallBreak) {
+    height: auto;
+  }
+
+  picture.bannerImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .bannerMask {
+    background: linear-gradient(to bottom, rgba(black,.5) 0%, rgba(black,.5) 70%, rgba($black,.5) 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .bannerGrid {
+    width: 100%;
+    height: 100%;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 15vw 1fr 1fr 15vw;
+    grid-template-rows: 1fr 260px;
+    grid-column-gap: 1px;
+    grid-row-gap: 7px;
+
+    @media (max-width: $xxlargeBreak) {
+      grid-template-columns: 10vw 1fr 1fr 10vw;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      grid-template-columns: 6vw 1fr 1fr 6vw;
+    }
+
+    @media (max-width: $mediumBreak) {
+      grid-template-rows: 1fr auto;
+    }
+
+    @media (max-width: $smallBreak) {
+      grid-template-columns: 3vw 1fr 1fr 3vw;
+      grid-template-rows: 10vh auto auto 40px;
+    }
+
+    .bannerCalloutsBg {
+      grid-column: 1 / span 4;
+      grid-row: 2 / span 1;
+      background: linear-gradient(to top, rgba($black,.3) 0%, rgba($black,.3) 100%);
+      backdrop-filter: blur(7px);
+      z-index: 0;
+      border-top: 1px solid $white8;
+      border-bottom: 1px solid $white15;
+
+      @media (max-width: $smallBreak) {
+        border: none;
+      }
+    }
+
+    .bannerCallout {
+      z-index: 2;
+      padding: 25px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+
+      span.h5 {
+        color: $aqua;
+      }
+
+      h1 {
+        font-size: 50px;
+
+        @media (max-width: $mediumBreak) {
+      		font-size: 40px;
+      	}
+
+        @media (max-width: $xsmallBreak) {
+      		font-size: 34px;
+      	}
+      }
+
+      p {
+        color: white;
+        margin: 0;
+      }
+
+      @media (max-width: $smallBreak) {
+        padding: 0 25px;
+      }
+    }
+
+    .left {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+      border-top: 8px solid $aqua;
+
+      @media (max-width: $smallBreak) {
+        border-top: none;
+        grid-column: 2 / span 2;
+      }
+    }
+
+    .right {
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1;
+      border-top: 8px solid $blue;
+
+      @media (max-width: $smallBreak) {
+        grid-column: 2 / span 2;
+        grid-row: 3 / span 1;
+        border-top: none;
+      }
+    }
+  }
+}
+
+section.bannerPlain {
+  position: relative;
+  overflow: hidden;
+  background: $silver;
+  width: 100%;
+  height: auto;
+  margin: 70px 0 0;
+  border-bottom: 1px solid $black7;
+
+  @media (max-width: $mediumBreak) {
+    margin: 120px 0 0;
+  }
+
+  .bannerPlainContent {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 75px 0 50px;
+    text-align: center;
+
+    @media (max-width: $largeBreak) {
+      margin: 0 calc(5vw + 25px);
+    }
+
+    span.h5 {
+      color: $blue;
+    }
+
+    h1 {
+      font-size: 50px;
+
+      @media (max-width: $mediumBreak) {
+        font-size: 40px;
+      }
+
+      @media (max-width: $xsmallBreak) {
+        font-size: 34px;
+      }
+    }
+  }
+}
+
+section.bannerFeature {
+  position: relative;
+  overflow: hidden;
+  background: black;
+  width: 100%;
+  height: 70vh;
+
+  @media (max-width: $mediumBreak) {
+    height: 500px;
+    margin: 120px 0 0;
+  }
+
+  @media (max-width: $smallBreak) {
+    height: 360px;
+  }
+
+  picture.bannerImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .bannerMask {
+    background: linear-gradient(to bottom, rgba(black,.5) 0%, rgba(black,.5) 70%, rgba($black,.5) 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .bannerPlainContent {
+    background: linear-gradient(to top, rgba($black,.35) 0%, rgba($black,.35) 100%);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    border-top: 1px solid $white8;
+    border-bottom: 1px solid $white15;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 70vw;
+    padding: 30px 15vw 25px 15vw;
+
+    @media (max-width: $xxlargeBreak) {
+      width: 80vw;
+      padding: 30px 10vw 25px;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      width: 88vw;
+      padding: 30px 6vw 25px;
+    }
+
+    @media (max-width: $smallBreak) {
+      padding: 0 6vw;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      backdrop-filter: blur(0);
+    }
+
+    span.h5 {
+      color: $aqua;
+
+      @media (max-width: $smallBreak) {
+        margin-top: 15px;
+      }
+    }
+
+    h1 {
+      font-size: 50px;
+
+      @media (max-width: $mediumBreak) {
+        font-size: 40px;
+      }
+
+      @media (max-width: $xsmallBreak) {
+        font-size: 34px;
+      }
+    }
+
+    p.caption {
+      color: white;
+    }
+  }
+
+}
+
+
+
+.lightGrid {
+  position: absolute;
+  height: 100%;
+  width: 70vw;
+  border-left: 1px solid $white8;
+  border-right: 1px solid $white8;
+  z-index: 1;
+  margin: 0 0 0 50%;
+  transform: translate(-50%);
+
+  @media (max-width: $xxlargeBreak) {
+    width: 80vw;
+  }
+
+  @media (max-width: $xlargeBreak) {
+    width: 88vw;
+  }
+
+  @media (max-width: $smallBreak) {
+    width: 94vw;
+  }
+
+  .grid25, .grid50, .grid75 {
+    position: absolute;
+    left: 25%;
+    background: $white8;
+    width: 1px;
+    height: 100%;
+    z-index: 1;
+
+    @media (max-width: $mediumBreak) {
+      display: none;
+    }
+  }
+
+  .grid50 {
+    left: 50%
+  }
+
+  .grid75 {
+    left: 75%
+  }
+
+  &.darkGrid {
+    border-left: 1px solid $black7;
+    border-right: 1px solid $black7;
+
+    .grid25, .grid50, .grid75 {
+      background: $black7;
+
+      @media (max-width: $mediumBreak) {
+        display: none;
+      }
+    }
+  }
+}

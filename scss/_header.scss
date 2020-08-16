@@ -6,7 +6,7 @@
 	z-index: 50;
   top: 0;
   width: 0vw;
-  height: 3px;
+  height: 4px;
 
   animation: progress 1s linear;
   /* Pause the animation */
@@ -78,7 +78,8 @@ header {
 
     img {
       transition: all .25s ease-in-out;
-      max-width: 170px;
+      max-width: 166px;
+      margin: 2px 0 0;
 
       &.color {
         display: none;
@@ -188,10 +189,10 @@ header {
   }
 
   // shrunken header styles upon scroll
-  &.small {
+  &.small, &.lightHeader {
     @media (min-width: $mediumBreak) {
       background: white;
-      box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+      box-shadow: 0 3px 30px rgba(black, .05), 0 1px 2px rgba(black, .075);
       animation: menu .7s cubic-bezier(.17,.67,.23,1);
       z-index: 6;
 

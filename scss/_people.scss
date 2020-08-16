@@ -1,0 +1,200 @@
+.peopleContainer {
+  width: 100%;
+  position: relative;
+  transition: .25s all cubic-bezier(.17,.67,.23,1);
+
+  .peopleGrid {
+    padding: 25px 0;
+    margin: 0 15vw;
+    border-left: 1px solid $black7;
+    border-right: 1px solid $black7;
+
+    @media (max-width: $xxlargeBreak) {
+      width: 80vw;
+      margin: 0 10vw;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      width: 88vw;
+      margin: 0 6vw;
+    }
+
+    @media (max-width: $smallBreak) {
+      width: 94vw;
+      margin: 0 3vw;
+    }
+
+    .people {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      @media (max-width: $mediumBreak) {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 12.5px;
+      }
+
+      h4 {
+        color: $black;
+        margin: 0 0 5px;
+      }
+
+      span.jobTitle {
+        color: $black65;
+        font-size: 14px;
+        display: block;
+      }
+
+      figure {
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 3px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: all 0.25s ease;
+        }
+      }
+
+      a.person {
+        border-radius: 3px;
+        padding: 25px;
+
+        @media (max-width: $mediumBreak) {
+          padding: 12.5px;
+        }
+
+        figure {
+          height: 200px;
+
+          @media (min-width: $xxlargeBreak) {
+            height: 250px;
+          }
+
+          @media (max-width: $mediumBreak) {
+            height: 30vw;
+          }
+        }
+
+        .peopleContent {
+          margin: 15px 0 0;
+        }
+
+        &:hover {
+          box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+
+          figure {
+            img {
+              transform: scale(1.04);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.personContainer {
+  background: white;
+  width: 100%;
+  position: relative;
+
+  .personGrid {
+    padding: 50px 0;
+    margin: 0 15vw;
+    border-left: 1px solid $black7;
+    border-right: 1px solid $black7;
+
+    @media (max-width: $xxlargeBreak) {
+      width: 80vw;
+      margin: 0 10vw;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      width: 88vw;
+      margin: 0 6vw;
+    }
+
+    @media (max-width: $smallBreak) {
+      width: 94vw;
+      margin: 0 3vw;
+    }
+
+    .topBlock {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 50px;
+
+      @media (max-width: $mediumBreak) {
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+      }
+
+      .topBlockContent {
+        padding: 0 0 0 25px;
+
+        @media (max-width: $smallBreak) {
+          padding: 0 25px;
+        }
+
+        a.allPeople {
+          margin: 0 0 205px;
+        }
+      }
+
+      .topBlockR {
+        p.caption {
+          padding: 5px 25px 0 0;
+
+          @media (max-width: $mediumBreak) {
+            padding: 5px 25px 0 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.filterPeople {
+  padding: 25px;
+
+
+  form {
+    width: 100%;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 18px;
+      left: 25px;
+    }
+
+    input[type="text"] {
+      font-family: $font;
+      font-weight: 300;
+      width: calc(100% - 90px);
+      height: 60px;
+      padding: 0 25px 0 65px;
+      background: white;
+      box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+      border: 1px solid $black7;
+      border-radius: 42px;
+      color: $black;
+      font-size: 20px;
+      transition: .2s ease-in-out;
+
+      &:focus {
+        border: 1px solid $black50;
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $black50;
+      }
+    }
+  }
+}

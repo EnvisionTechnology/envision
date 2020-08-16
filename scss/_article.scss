@@ -1,0 +1,240 @@
+article {
+  background: white;
+  width: 100%;
+  position: relative;
+
+  .articleContainer {
+    padding: 50px 0;
+    margin: 0 15vw;
+    border-left: 1px solid $black7;
+    border-right: 1px solid $black7;
+
+    display: grid;
+    grid-template-columns: 180px 1fr 180px;
+    grid-gap: 75px;
+
+    @media (min-width: $xxxlargeBreak) {
+      grid-template-columns: 250px 1fr 250px;
+      grid-gap: 100px;
+    }
+
+    @media (max-width: $xxlargeBreak) {
+      width: 80vw;
+      margin: 0 10vw;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      width: 88vw;
+      margin: 0 6vw;
+    }
+
+    @media (max-width: $mediumBreak) {
+      width: calc(88vw - 50px);
+      padding: 50px 25px;
+      grid-template-columns: 1fr;
+      grid-gap: 25px;
+    }
+
+    @media (max-width: $smallBreak) {
+      width: calc(94vw - 50px);
+      margin: 0 3vw;
+    }
+
+    aside.articleLeft {
+      order: 2;
+
+      @media (min-width: $mediumBreak) {
+        padding-left: 25px;
+        order: 1;
+      }
+
+      a.author {
+        img {
+          max-width: 100px;
+          border-radius: 100px;
+        }
+        h4 {
+          color: $black;
+          margin: 10px 0 5px;
+        }
+
+        &:hover {
+          h4 {
+            color: $blue;
+          }
+        }
+      }
+      .lastUpdated {
+        font-size: 13px;
+        color: $gray;
+        font-weight: 300;
+        padding: 10px 0;
+        border-top: 1px solid $black7;
+        border-bottom: 1px solid $black7;
+        line-height: 1.5;
+
+        span {
+          display: block;
+
+          svg {
+            width: 11px;
+            transform: translateY(1px);
+            path {
+              fill: $black50;
+            }
+          }
+        }
+      }
+    }
+
+    .articleCenter {
+      order: 2;
+
+      @media (max-width: $mediumBreak) {
+        order: 1;
+      }
+
+      h2, h3, h4 {
+        margin: 50px 0 20px;
+      }
+
+      a {
+        color: $black;
+        text-decoration: underline;
+        text-decoration-color: $blue;
+        padding: 1px;
+
+        &:hover {
+          background: $blue;
+          color: white;
+        }
+      }
+
+      a.allArticles {
+        display: block;
+        border-top: 1px dashed $black15;
+        padding: 25px 0 0 0;
+        margin: 25px 0 0 0;
+      }
+
+      .intro p {
+        color: black;
+        font-size: 22px;
+        font-weight: 300;
+        margin: 0 0 50px;
+        line-height: 1.6;
+
+        @media (max-width: $smallBreak) {
+          font-size: 18px;
+          line-height: 1.5;
+      	}
+      }
+
+      p.dropcap:first-letter {
+        color: $black;
+        font-weight: 500;
+        float: left;
+        font-size: 75px;
+        line-height: 60px;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-left: 3px;
+      }
+
+      p.dropcap:first-line {
+        color: $black;
+        font-weight: 500;
+      }
+    }
+
+    blockquote {
+      margin: 50px -30px;
+      border-left: 5px solid $blue;
+      padding: 0 25px;
+      font-size: 26px;
+      line-height: 1.5;
+      font-weight: 300;
+      color: $blue;
+
+      @media (max-width: $mediumBreak) {
+        margin: 40px -25px;
+      }
+    }
+
+    figure {
+      margin: 50px -30px;
+
+      figcaption {
+        font-size: 13px;
+        color: $gray;
+        font-weight: 300;
+        line-height: 1.5;
+        margin: 4px 0;
+        padding: 0 0 5px;
+        border-bottom: 1px solid $black7;
+      }
+
+      @media (max-width: $mediumBreak) {
+        margin: 40px -25px;
+
+        figcaption {
+          padding: 0 0 5px 25px;
+        }
+      }
+    }
+
+    aside.articleRight {
+      order: 3;
+
+      @media (min-width: $mediumBreak) {
+        padding-right: 25px;
+      }
+      .share {
+        .shareIcons {
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            display: inline-block;
+            background: $black7;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              max-height: 12px;
+              max-width: 12px;
+            }
+
+            &:hover {
+              background: $aqua15;
+            }
+          }
+        }
+      }
+
+      .topics {
+        margin: 25px 0 0;
+        padding: 25px 0 0;
+        border-top: 1px solid $black7;
+
+        a {
+          display: inline-block;
+          padding: 3px 5px;
+          margin: 0 0 5px;
+          background: $black7;
+          color: $black;
+          border-radius: 3px;
+          font-size: 13px;
+
+          &:hover {
+            background: $aqua15;
+          }
+        }
+      }
+    }
+  }
+}

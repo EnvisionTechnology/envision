@@ -2,11 +2,13 @@
 // Colors
 $black: #04121D;
 $black85: rgba($black, .85);
+$black75: rgba($black, .75);
 $black65: rgba($black, .65);
+$black50: rgba($black, .5);
 $black15: rgba($black, .15);
 $black7: rgba($black, .07);
 
-$gray: rgba($black, .8); //body text color
+$gray: $black75; //body text color
 
 $blue: #0052F1; // default link color
 $blue75: rgba($blue, .75);
@@ -43,6 +45,8 @@ $xsmallBreak: 500px;
 
 // Typography
 $font: 'Work Sans', 'Trebuchet MS', Helvetica, sans-serif;
+$largeTextSize: 17px;
+$largeLineHeight: 1.65;
 $textSize: 16px;
 $lineHeight: 1.6;
 $mobileTextSize: 15px;
@@ -72,7 +76,7 @@ body {
 h1, .h1 {
 	font-weight: 600;
 	font-size: 60px;
-  line-height: 1.2;
+  line-height: 1.15;
 	margin: 0 0 12px;
 
 	@media (max-width: $mediumBreak) {
@@ -92,8 +96,8 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-weight: 500;
-	font-size: 28px;
+	font-weight: 600;
+	font-size: 26px;
   line-height: 1.4;
 	margin: 0 0 10px;
 
@@ -115,10 +119,11 @@ h4, .h4 {
 }
 
 h5, .h5 {
+  display: block;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.2;
-	margin: 0 0 8px;
+	margin: 0 0 10px;
 	letter-spacing: .5px;
 	text-transform: uppercase;
 }
@@ -129,12 +134,23 @@ p {
   font-size: $textSize;
 	line-height: $lineHeight;
 	color: $gray;
-  margin: 0 0 22px;
+  margin: 0 0 25px;
 
   &.large {
     font-size: 20px;
     font-weight: 300;
+    line-height: 1.6;
+  }
+
+  &.caption {
+    font-size: 13px;
+    font-weight: 300;
     line-height: 1.5;
+  }
+
+  @media (min-width: $xxlargeBreak) {
+    font-size: $largeTextSize;
+    line-height: $largeLineHeight;
   }
 
 	@media (max-width: $smallBreak) {
@@ -143,7 +159,7 @@ p {
 
     &.large {
       font-size: 18px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 	}
 }
@@ -154,6 +170,11 @@ ul, ol {
 	color: $gray;
 	margin: 0 0 22px;
 	padding: 0 0 0 20px;
+
+  @media (min-width: $xxlargeBreak) {
+    font-size: $largeTextSize;
+    line-height: $largeLineHeight;
+  }
 
 	@media (max-width: $smallBreak) {
 		font-size: $mobileTextSize;
@@ -168,6 +189,10 @@ ul, ol {
 			font-size: 1em;
 		}
   }
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
