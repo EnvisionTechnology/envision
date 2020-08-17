@@ -40,6 +40,12 @@ article {
       margin: 0 3vw;
     }
 
+    aside {
+      h4 {
+      	font-size: 18px;
+      }
+    }
+
     aside.articleLeft {
       order: 2;
 
@@ -222,16 +228,20 @@ article {
         border-top: 1px solid $black7;
 
         a {
-          display: inline-block;
-          padding: 3px 5px;
-          margin: 0 0 5px;
-          background: $black7;
-          color: $black;
-          border-radius: 3px;
+          display: block;
+          color: $gray;
+          padding: 1px;
+          margin: 12px 0;
           font-size: 13px;
+
+          @media (max-width: $mediumBreak) {
+            display: inline-block;
+            margin: 8px 8px 8px 0;
+          }
 
           &:hover {
             background: $aqua15;
+            color: $black;
           }
         }
       }

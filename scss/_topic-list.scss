@@ -1,0 +1,186 @@
+
+
+
+section.topicArticles {
+  background: white;
+  width: 100%;
+  position: relative;
+
+  .topicArticlesGrid {
+    padding: 25px 0 50px;
+    margin: 0 15vw;
+    border-left: 1px solid $black7;
+    border-right: 1px solid $black7;
+
+    display: grid;
+    grid-template-columns: 1fr 25%;
+
+    @media (max-width: $xxlargeBreak) {
+      width: 80vw;
+      margin: 0 10vw;
+    }
+
+    @media (max-width: $xlargeBreak) {
+      width: 88vw;
+      margin: 0 6vw;
+    }
+
+    @media (max-width: $mediumBreak) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: $smallBreak) {
+      width: 94vw;
+      margin: 0 3vw;
+    }
+  }
+}
+
+.paginatedArticles {
+
+  a {
+    h2, h3, h4 {
+      color: $black;
+    }
+  }
+
+  span.dateAuthor {
+    color: $black65;
+    font-size: 14px;
+    display: block;
+    margin: 15px 0 0;
+
+    img {
+      max-width: 15px;
+      margin: 0 6px -3px 0;
+    }
+  }
+
+  figure {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.25s ease;
+    }
+  }
+
+
+  a.insight {
+    padding: 25px;
+    margin: 0 50px 0 0;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 25px;
+    border-bottom: 1px solid $black7;
+    color: $gray;
+
+    @media (max-width: $mediumBreak) {
+      border-bottom: none;
+    }
+
+    @media (max-width: $smallBreak) {
+      grid-template-columns: 100px 1fr;
+      margin: 0;
+    }
+
+    figure {
+      width: 150px;
+      height: 100px;
+
+      @media (max-width: $smallBreak) {
+        width: 100px;
+      }
+    }
+
+    .insightContent {
+      margin: 0;
+
+      h4 {
+        font-size: 18px;
+      }
+
+      span.dateAuthor {
+        margin: 5px 0 0;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 4px 40px rgba(black, .1), 0 1px 3px rgba(black, .1);
+
+      figure {
+        img {
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+}
+
+aside.articleRight {
+  padding: 25px 0 0 25px;
+
+  @media (min-width: $mediumBreak) {
+    padding-right: 25px;
+  }
+
+  .share {
+    .shareIcons {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        display: inline-block;
+        background: $black7;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-height: 12px;
+          max-width: 12px;
+        }
+
+        &:hover {
+          background: $aqua15;
+        }
+      }
+    }
+  }
+
+  .topics {
+    margin: 25px 0 0;
+    padding: 25px 0 0;
+    border-top: 1px solid $black7;
+
+    a {
+      display: block;
+      color: $gray;
+      padding: 1px 5px;
+      margin: 12px 0;
+      font-size: 13px;
+
+      @media (max-width: $mediumBreak) {
+        display: inline-block;
+        margin: 8px 8px 8px 0;
+      }
+
+      &.current {
+        background: $aqua15;
+        cursor: default;
+      }
+
+      &:hover {
+        background: $aqua15;
+        color: $black;
+      }
+    }
+  }
+}
