@@ -1,9 +1,11 @@
 footer {
+  border-top: 2px solid $black;
 
   .topFooterContainer {
     background: $black;
     width: 100%;
     position: relative;
+    border-top: 2px solid $black;
 
     .topFooter {
       padding: 80px 15vw;
