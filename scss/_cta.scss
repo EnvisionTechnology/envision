@@ -1,0 +1,85 @@
+#fixedCta {
+  position: fixed;
+  right: 0;
+  top: calc(100vh - 250px);
+  height: 225px;
+  width: calc(25vw - 25px);
+  background: $black;
+  margin: 0 25px 25px 0;
+  z-index: 2;
+  border-radius: 2px;
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow: 0 6px 60px rgba(black, .1),
+              0 4px 20px rgba($aqua, .12),
+              0 1px 3px rgba(black, .13);
+
+  @media (max-width: $xlargeBreak) {
+    width: calc(50vw - 25px);
+    top: calc(100vh - 200px);
+    height: 175px;
+  }
+
+  @media (max-width: $smallBreak) {
+    width: calc(100vw - 50px);
+    top: calc(100vh - 175px);
+    height: 150px;
+  }
+
+  &.appear {
+    opacity: 1;
+    animation: cta .7s cubic-bezier(.17,.67,.23,1);
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    svg {
+      transform: scale(.8);
+
+      path {
+      	fill: white;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      svg path {
+      	fill: $aqua;
+      }
+		}
+	}
+
+  .bodyCtaTitle {
+    padding: 0 25px;
+
+    h4 {
+      margin: 0 0 20px;
+      color: white;
+    }
+  }
+
+  button {
+    margin: 0 25px;
+  }
+}
+
+
+@keyframes cta {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

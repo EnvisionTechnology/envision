@@ -67,6 +67,7 @@ body {
 	scroll-behavior: smooth;
 	font-style: normal;
 	font-weight: 400;
+  position: relative;
 
 	&.body-fixed {
   	overflow: hidden;

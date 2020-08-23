@@ -23,3 +23,14 @@ if (mediaquery.matches) {
     }
   });
 }
+
+// Display cta
+const cta = document.querySelector("#fixedCta");
+
+window.addEventListener("scroll", function() {
+  if (window.pageYOffset > 700) {
+    cta.classList.add("appear");
+  } else {
+    cta.classList.remove("appear");
+  }
+});
