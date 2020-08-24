@@ -4,7 +4,7 @@
   top: calc(100vh - 250px);
   height: 225px;
   width: calc(25vw - 25px);
-  background: $black;
+  background: white;
   margin: 0 25px 25px 0;
   z-index: 2;
   border-radius: 2px;
@@ -26,8 +26,8 @@
 
   @media (max-width: $smallBreak) {
     width: calc(100vw - 50px);
-    top: calc(100vh - 175px);
-    height: 150px;
+    top: calc(100vh - 225px);
+    height: 200px;
   }
 
   &.appear {
@@ -37,14 +37,15 @@
 
   .closeButton {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 0;
+    right: 0;
+    padding: 20px;
 
     svg {
       transform: scale(.8);
 
       path {
-      	fill: white;
+      	fill: $black;
       }
     }
 
@@ -52,7 +53,7 @@
       cursor: pointer;
 
       svg path {
-      	fill: $aqua;
+      	fill: $blue;
       }
 		}
 	}
@@ -62,7 +63,7 @@
 
     h4 {
       margin: 0 0 20px;
-      color: white;
+      color: $black;
     }
   }
 

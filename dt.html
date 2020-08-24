@@ -43,6 +43,18 @@
     </div>
     <div class="progress"></div>
 
+    <div id="fixedCta">
+      <span class="closeButton" onclick="this.parentElement.style.display='none';">
+    		<svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M16.97 0l1.887 1.886-16.97 16.97L0 16.972z"/><path fill="#fff" d="M0 1.886L1.886 0l16.97 16.97-1.885 1.886z"/></svg>
+    	</span>
+      <div class="bodyCtaTitle">
+        <h4>Ready to chat about your organization's digital transformation?</h4>
+      </div>
+      <button type="button" class="popup-trigger" data-popup-trigger="book">
+        Schedule time to talk
+      </button>
+    </div>
+
     <header id="header" role="banner">
       <a class="logo" href="/">
         <img src="logos/env-logo-white.svg" alt="Envision logo" class="white" />
@@ -250,31 +262,6 @@
             </div>
           </div>
 
-          <div class="simpleBlock">
-            <div class="simpleContentL">
-              <div class="blockTitle">
-                <h2>Training shouldn't put added stress on your employees. Let us handle it.</h2>
-              </div>
-            </div>
-            <div class="simpleContentR">
-              <p>Envision’s Training Management solution takes the work of planning and managing trainings for IT staff, or for other staff that togetehr we determine should be part of this training plan, and ensure that you do not need to worry about it. </p>
-            </div>
-          </div>
-
-          <div class="simpleBlock">
-            <div class="simpleContentL">
-              <picture>
-                <img src="images/conference-table.jpg" alt="">
-              </picture>
-            </div>
-            <div class="simpleContentR">
-              <h3>Customized Training Plans</h3>
-              <p>In addition to developing and administering individual training plans, Envision also employees trainers who can develop and deliver customized education for your organization. These trainings include topics like Cybersecurity Posture Training, Microsoft Teams Training, and Digital ADA Compliance. All trainings are tailored to your specific organization to ensure maximum relevance to your people and your business. We literally never give the exact same training twice!</p>
-              <p>Is there a vendor-specific technology your team is interested in being trained on? We can facilitate that training for you as well and make all the arrangements – from the presenter to the training space where the session will be held. We will also connect with your employees both before and after the session to ensure that all trainings are meeting CPE plans and business requirements.</p>
-
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -282,32 +269,36 @@
       <section class="dtContainer">
 
         <div class="serviceGrid">
-          <div class="serviceTitle">
-            <span class="h5">The JoURNEY</span>
-            <h2>Hop in and take a ride with us into the future.</h2>
-            <p class="large">
-              You may not need to take every stop, but we’ll identify the checkpoints your organization must make to survive and thrive in this fast-moving, technology-driven world.
-            </p>
-          </div>
 
-          <div class="you">
-            <img src="icons/icon-your-location.svg">
-            <h2>You<br><span>+ Envision</span></h2>
-            <div class="mapStart"></div>
+          <div class="serviceTitleContainer">
+            <div class="serviceTitle">
+              <span class="h5">The JoURNEY</span>
+              <h2>Hop in and take a ride with us into your future.</h2>
+              <p class="large">
+                You may not need to take every stop, but we’ll identify the checkpoints your organization must make to survive and thrive in this fast-moving, technology-driven world.
+              </p>
+            </div>
+            <div class="you">
+              <img src="icons/icon-your-location.svg">
+              <h2>You <span>+ Envision</span></h2>
+              <div class="mapStart"></div>
+            </div>
           </div>
 
           <div class="services">
 
             <a href="#" class="service">
-              <span class="serviceIcon">
-                <img src="icons/icon-location.svg">
-              </span>
+              <svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0855 27.7546L2.71841 18.1395L0 20.2538L15.1023 32L30.2045 20.2538L27.4693 18.1227L15.0855 27.7546V27.7546ZM15.1023 23.4924L27.4525 13.8773L30.2045 11.7462L15.1023 0L0 11.7462L2.73519 13.8773L15.1023 23.4924V23.4924Z" fill="#70DCFF"/>
+              </svg>
               <h4>Business Continuity</h4>
             </a>
 
             <a href="#" class="service">
               <span class="serviceIcon">
-                <img src="icons/icon-location.svg">
+                <svg width="42" height="28" viewBox="0 0 42 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.8625 10.57C32.6725 4.5325 27.37 0 21 0C15.9425 0 11.55 2.87 9.3625 7.07C4.095 7.63 0 12.0925 0 17.5C0 23.2925 4.7075 28 10.5 28H33.25C38.08 28 42 24.08 42 19.25C42 14.63 38.4125 10.885 33.8625 10.57V10.57ZM17.5 22.75L11.375 16.625L13.8425 14.1575L17.5 17.7975L26.565 8.74998L29.0325 11.2175L17.5 22.75V22.75Z" fill="#70DCFF"/>
+                </svg>
               </span>
               <h4>Cloud & Infrastructure</h4>
             </a>
@@ -316,42 +307,44 @@
               <span class="serviceIcon">
                 <img src="icons/icon-location.svg">
               </span>
-              <h4>Business Continuity</h4>
+              <h4>Data Analytics and Business Intelligence</h4>
             </a>
 
             <a href="#" class="service">
               <span class="serviceIcon">
                 <img src="icons/icon-location.svg">
               </span>
-              <h4>Cloud & Infrastructure</h4>
+              <h4>Managed I.T. Solutions</h4>
             </a>
 
             <a href="#" class="service">
               <span class="serviceIcon">
                 <img src="icons/icon-location.svg">
               </span>
-              <h4>Business Continuity</h4>
+              <h4>R&D / Emerging Tech</h4>
             </a>
 
             <a href="#" class="service">
               <span class="serviceIcon">
                 <img src="icons/icon-location.svg">
               </span>
-              <h4>Cloud & Infrastructure</h4>
+              <h4>Security & Compliance</h4>
             </a>
 
             <a href="#" class="service">
               <span class="serviceIcon">
                 <img src="icons/icon-location.svg">
               </span>
-              <h4>Business Continuity</h4>
+              <h4>Training & Education</h4>
             </a>
 
             <a href="#" class="service">
               <span class="serviceIcon">
-                <img src="icons/icon-location.svg">
+                <svg width="42" height="28" viewBox="0 0 42 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7 3.5H38.5V0H7C5.075 0 3.5 1.575 3.5 3.5V22.75H0V28H24.5V22.75H7V3.5ZM40.25 7H29.75C28.7875 7 28 7.7875 28 8.75V26.25C28 27.2125 28.7875 28 29.75 28H40.25C41.2125 28 42 27.2125 42 26.25V8.75C42 7.7875 41.2125 7 40.25 7ZM38.5 22.75H31.5V10.5H38.5V22.75Z" fill="#70DCFF"/>
+                </svg>
               </span>
-              <h4>Cloud & Infrastructure</h4>
+              <h4>Website Design & Development</h4>
             </a>
 
           </div>
@@ -361,10 +354,21 @@
               <div class="mapMiddle"></div>
               <div class="mapEnd"></div>
               <img src="icons/icon-star.svg">
-              <h2>Arrive into a future that is
-                <!-- <span>safer</span> -->
-                <span>more profitable</span>
-              </h2>
+
+              <div class="wordChange">
+              	<h2>
+              		Arrive into a future that is
+                </h2>
+            		<div class="words h2">
+            			<span>safer.</span>
+            			<span>more profitable.</span>
+            			<span>more efficient.</span>
+            			<span>easier.</span>
+            			<span>smarter.</span>
+            			<span>ready.</span>
+            		</div>
+              </div>
+
             </div>
           </div>
 
